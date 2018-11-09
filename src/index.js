@@ -11,7 +11,7 @@ class AxeRunner {
   /* global axe:false */
   getRunnable() {
     return function axeRunner(options, context) {
-      axe.run(context || document, options || { resultTypes: ['violations'] }, function(err, results) {
+      axe.run(context || document, options || {}, function(err, results) {
         window.callPhantom(null, results.violations);
       });
     };
